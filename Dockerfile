@@ -1,6 +1,6 @@
 FROM openjdk:7-jre
 
-ENV SNAPSHOT_VERSION=sample-0.0.1-20170111.142754-1
+ENV SNAPSHOT_VERSION=sample-0.0.1-20170111.152720-2
 ENV APP_NAME=sample-0.0.1
 ENV NEXUS_URL=http://sourcesup.renater.fr/nexus/content/repositories/c001-snapshots/poc-socle/sample/0.0.1-SNAPSHOT/${SNAPSHOT_VERSION}.war 
 
