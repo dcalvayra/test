@@ -1,5 +1,9 @@
 FROM openjdk:7-jre
 
+ENV SNAPSHOT_VERSION=sample-0.0.1-20170111.142754-1
+ENV APP_NAME=sample
+ENV NEXUS_URL=http://sourcesup.renater.fr/nexus/content/repositories/c001-snapshots/poc-socle/sample/0.0.1-SNAPSHOT/${SNAPSHOT_VERSION}.war 
+
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
 RUN mkdir -p "$CATALINA_HOME"
@@ -92,6 +96,7 @@ RUN set -e \
 		echo >&2 "$nativeLines"; \
 		exit 1; \
 	fi
-COPY war /usr/local/tomcat/webapps
+#COPY war /usr/local/tomcat/webapps
+wget "${NEXUS_URL}" -O /usr/local/tomcat/webapps/${APP_NAME}.war
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
