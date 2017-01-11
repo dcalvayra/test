@@ -97,6 +97,6 @@ RUN set -e \
 		exit 1; \
 	fi
 #COPY war /usr/local/tomcat/webapps
-wget "${NEXUS_URL}" -O /usr/local/tomcat/webapps/${APP_NAME}.war
+RUN wget "${NEXUS_URL}" -O /usr/local/tomcat/webapps/${APP_NAME}.war
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
