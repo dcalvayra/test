@@ -1,8 +1,9 @@
 FROM openjdk:7-jre
 
-ENV SNAPSHOT_VERSION=sample-0.0.1-20170111.152720-2
-ENV APP_NAME=sample-0.0.1
-ENV NEXUS_URL=http://sourcesup.renater.fr/nexus/content/repositories/c001-snapshots/poc-socle/sample/0.0.1-SNAPSHOT/${SNAPSHOT_VERSION}.war 
+ENV RELEASE_VERSION=0.0.1
+ENV APP_NAME=sample
+
+ENV NEXUS_URL=http://sourcesup.renater.fr/nexus/content/repositories/c001-releases/poc-socle/${APP_NAME}/${RELEASE_VERSION}-RELEASE/${APP_NAME}-${RELEASE_VERSION}-RELEASE.war 
 
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
