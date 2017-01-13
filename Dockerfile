@@ -97,7 +97,7 @@ RUN set -e \
 		echo >&2 "$nativeLines"; \
 		exit 1; \
 	fi
-#COPY war /usr/local/tomcat/webapps
+COPY src/server.xml /usr/local/tomcat/conf/server.xml
 RUN wget "${NEXUS_URL}" -O /usr/local/tomcat/webapps/${APP_NAME}.war
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
