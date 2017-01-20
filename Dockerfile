@@ -97,6 +97,7 @@ RUN set -e \
 		echo >&2 "$nativeLines"; \
 		exit 1; \
 	fi
+# recuperation du war sur Nexus	
 COPY lib/postgresql-9.3-1101-jdbc3.jar /usr/local/tomcat/lib/postgresql-9.3-1101-jdbc3.jar
 COPY src/context.xml /usr/local/tomcat/conf/context.xml
 RUN wget "${NEXUS_URL}" -O /usr/local/tomcat/webapps/${APP_NAME}.war
